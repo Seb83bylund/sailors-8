@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import SessionProvider from "@/components/SessionProvider";
+import { SessionProvider } from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 
@@ -36,8 +36,8 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <SessionProvider session={session}>
-          {children}
-        </SessionProvider>  
+         {children}
+        </SessionProvider> 
       </body>
     </html>
   );
